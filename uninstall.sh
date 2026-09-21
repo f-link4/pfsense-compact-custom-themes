@@ -12,11 +12,9 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 DEST="/usr/local/www/css"
-
 echo "Scanning $DEST..."
 
 FILES=$(ls "$DEST"/Compact-Custom-[0-9][0-9]-*.css 2>/dev/null || true)
-
 if [ -z "$FILES" ]; then
     echo "No Compact-Custom themes found in $DEST."
     echo "======================================================================"
@@ -24,7 +22,6 @@ if [ -z "$FILES" ]; then
 fi
 
 COUNT=$(echo "$FILES" | wc -l | tr -d ' ')
-
 echo "Found $COUNT theme files."
 
 echo "Removing files..."
