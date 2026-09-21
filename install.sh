@@ -1,7 +1,6 @@
 #!/bin/sh
 set -e
 
-echo ""
 echo "======================================================================"
 echo "  pfSense Compact-Custom Themes — Installer"
 echo "  https://github.com/f-link4/pfsense-compact-custom-themes"
@@ -18,7 +17,6 @@ cleanup() {
     rm -rf "$TMPDIR"
 }
 trap cleanup EXIT
-
 cd "$TMPDIR" || exit 1
 
 BRANCH=main
@@ -44,7 +42,6 @@ else
 fi
 
 tar -xzf "$ARCHIVE"
-
 EXTRACTED_DIR=$(tar -tzf "$ARCHIVE" | head -1 | cut -f1 -d"/")
 if [ -z "$EXTRACTED_DIR" ]; then
     echo "Failed to find extracted directory"
@@ -58,12 +55,10 @@ if [ "$COUNT" = "0" ]; then
     exit 1
 fi
 
-echo ""
 echo "Installing $COUNT themes to $DEST..."
 mkdir -p "$DEST"
 install -m 0644 -v Compact-Custom-[0-9][0-9]-*.css "$DEST/"
 
-echo ""
 echo "======================================================================"
 echo "  Installed:  $COUNT themes in $DEST"
 echo "======================================================================"
