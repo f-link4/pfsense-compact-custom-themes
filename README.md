@@ -1,6 +1,6 @@
 # pfSense Compact-Custom Themes
 
-57 compact dark themes for pfSense
+57 compact clear desaturated themes for pfSense
 
 ## Install
 
